@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'PKCOIN'),
+      home: const MyHomePage(title: 'MetaCoin'),
     );
   }
 }
@@ -41,11 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
   late Client httpClient;
   late Web3Client ethClient;
   bool data = false;
+
   final myAddress = "0x63e2b80AA34f048EDdBe67a687354b9F458187B2";
   int myAmount = 0;
   // ignore: prefer_typing_uninitialized_variables
   var myData;
-   String ?txHash ;
+  String? txHash;
   @override
   void initState() {
     super.initState();
@@ -53,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ethClient = Web3Client(
         "https://rinkeby.infura.io/v3/5ad3edc61eea4a0e92afdf73c4ff0b74",
         httpClient);
+
     getBalance(myAddress);
   }
 
@@ -60,12 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
 // PKCoin
   Future<DeployedContract> loadContract() async {
     String abi = await rootBundle.loadString("assets/api.json");
-    String contractAddress = "0x2Bd4532953f109b82da5F4706c0c904869f1f0a1";
-    final contract = DeployedContract(ContractAbi.fromJson(abi, "PKCoin"),
+    String contractAddress = "0x3F6EE9d6f990A2Dad561de30Ef334C783D8977f0";
+    final contract = DeployedContract(ContractAbi.fromJson(abi, "MetaCoin"),
         EthereumAddress.fromHex(contractAddress));
+
     return contract;
   }
-
   Future<List<dynamic>> query(String functionName, List<dynamic> args) async {
     final contract = await loadContract();
     final ethFunction = contract.function(functionName);
@@ -91,7 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
     final result = await ethClient.sendTransaction(
         credentials,
         Transaction.callContract(
-            contract: contract, function: ethFunction, parameters: args),fetchChainIdFromNetworkId:false,chainId: 4 );
+            contract: contract, function: ethFunction, parameters: args),
+        fetchChainIdFromNetworkId: false,
+        chainId: 4);
 
     return result;
   }
@@ -101,22 +105,19 @@ class _MyHomePageState extends State<MyHomePage> {
     var response = await submit("depositBalance", [bigAmount]);
     // ignore: avoid_print
     print("Deposited");
-    txHash=response;
-    setState(() {
-  
-});
+    txHash = response;
+    setState(() {});
     return response;
   }
 
   Future<String> withdrawCoin() async {
     var bigAmount = BigInt.from(myAmount);
     var response = await submit("withdrawBalance", [bigAmount]);
+
     // ignore: avoid_print
     print("withdraw");
-        txHash=response;
-setState(() {
-  
-});
+    txHash = response;
+    setState(() {});
     return response;
   }
 
@@ -132,7 +133,7 @@ setState(() {
             .make(),
         VStack([
           (context.percentHeight * 10).heightBox,
-          "\$PKCOIN".text.xl4.white.bold.center.makeCentered().py16(),
+          "\$METACOIN".text.xl4.white.bold.center.makeCentered().py16(),
           (context.percentHeight * 5).heightBox,
           VxBox(
             child: VStack([
@@ -194,8 +195,8 @@ setState(() {
             ],
             alignment: MainAxisAlignment.spaceAround,
             axisSize: MainAxisSize.max,
-          ).py12(),if(txHash != null)
-          txHash!.text.black.makeCentered().p16()
+          ).py12(),
+          if (txHash != null) txHash!.text.black.makeCentered().p16()
         ]),
       ]),
     );
