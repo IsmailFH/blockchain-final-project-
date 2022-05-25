@@ -1,16 +1,9 @@
-# pkcoin
+# METACOIN Blockchain Flutter App | Solidity | Metamask 
 
-A new Flutter project.
+![photo1653457499](https://user-images.githubusercontent.com/80541747/170188893-b2473225-d6be-4369-a1d1-2a533fcfff88.jpeg)
 
-## Getting Started
+![photo1653457496](https://user-images.githubusercontent.com/80541747/170188908-88ca71f4-fa21-499e-849e-796eb1ab9217.jpeg)
 
-This project is a starting point for a Flutter application.
+[rgs_plan_ar_semester_3.pdf](https://github.com/mayed123502/The-final-project-Blockchain/files/8768270/rgs_plan_ar_semester_3.pdf)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![120](https://user-images.githubusercontent.com/80541747/170188978-68f1e7d8-bf32-42c5-a69b-115d97d68967.PNG)
