@@ -4,6 +4,4 @@
 
 ![photo1653457496](https://user-images.githubusercontent.com/80541747/170188908-88ca71f4-fa21-499e-849e-796eb1ab9217.jpeg)
 
-[rgs_plan_ar_semester_3.pdf](https://github.com/mayed123502/The-final-project-Blockchain/files/8768270/rgs_plan_ar_semester_3.pdf)
-
 ![120](https://user-images.githubusercontent.com/80541747/170188978-68f1e7d8-bf32-42c5-a69b-115d97d68967.PNG)
